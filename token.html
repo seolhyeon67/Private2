@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>token 생성</title>
+</head>
+<body>
+    <style>
+        body {
+            font-size: 20px;
+        }
+        p img {
+            height: 50%;
+            width: 50%;
+            display: block;
+        }
+    </style>
+    <header><h1>token 생성을 통한 access</h1></header>
+    <ul>
+        <li>조직 및 프라이빗 저장소 생성</li>
+        <li>token 생성</li>
+    </ul>
+    <p>
+        먼저 token 생성을 위해 organization(조직) 생성 방법을 알아보자.<br>
+        깃헙에 접속하여 왼쪽 본인 프로필을 클릭하여 있는 "Settings"로 들어간다.
+        <img src="src/4.personal access token/조직 및 프라이빗 저장소 생성/1.png"><br>
+        왼쪽에 "Organization" 클릭, "New organization"를 클릭한다.
+        <img src="src/4.personal access token/조직 및 프라이빗 저장소 생성/2.png"><br>
+        무료로 만들자. 왼쪽 것을 클릭한다.
+        <img src="src/4.personal access token/조직 및 프라이빗 저장소 생성/3.png"><br>
+        조직 이름과 이메일을 입력한 후 간단한 퀴즈를 풀면 아래사진 속 1번처럼 초록색 화살표가 뜬다. 2번까지 체크해주면 3번 "Next"버튼이 활성화 된다. 역시 클릭한다.
+        <img src="src/4.personal access token/조직 및 프라이빗 저장소 생성/4.png">
+        <img src="src/4.personal access token/조직 및 프라이빗 저장소 생성/5.png">
+        <br>
+        조직원을 구성하라는 안내말인데 테스트용이니 패스한다. 
+        <img src="src/4.personal access token/조직 및 프라이빗 저장소 생성/6.png">       
+    </p>
+    <p>
+        조직만들기는 끝났다. 이제 조직안에 프라이빗 리파지토리를 하나 만들어보자.
+        마찬가지로 깃헙 왼쪽 프로필을 클릭, "Your organizations"를 클릭한다. 그럼 내가 아까 만든 조직이 있다. 클릭한다.
+        <img src="src/4.personal access token/조직 및 프라이빗 저장소 생성/7-1.png"> 
+        <img src="src/4.personal access token/조직 및 프라이빗 저장소 생성/7-2.png"><br>
+        오른쪽 아래 "Create new repository"를 클릭하여 조직 내 프라이빗 저장소를 생성한다.
+        <img src="src/4.personal access token/조직 및 프라이빗 저장소 생성/7-3.png"> 
+        <img src="src/4.personal access token/조직 및 프라이빗 저장소 생성/8.png"> 
+    </p>
+    <p>
+        자 이제 조직 내 프라이빗 리파지토리까지 만들었다. token을 생성해보자.<br>
+        깃헙 왼쪽 프로필 클릭, "Settings"를 클릭한다.
+        스크롤을 내려 맨 왼쪽 하단에 "Developer settings" 클릭.
+        <img src="src/4.personal access token/token/1.png">
+        <img src="src/4.personal access token/token/2.png">
+        <br>
+        아래 사진 속에 맨 왼쪽부터 1-2-3-4 순서대로 클릭한다.
+        <img src="src/4.personal access token/token/3.png"><br>
+        Note란에 토큰사용목적?을 적어주고, 유효기간을 보통 90일로 한다기에 나도 그렇게 했다. 테스트 목적이므로 "repo"에만 체크해주었다.하단에 "Generate token" 클릭한다.
+        <img src="src/4.personal access token/token/4.png">
+        <img src="src/4.personal access token/token/5.png"><br>
+        드디어 토큰이 생성되었다. 토큰은 다시보기가 안되므로 복사하여 보관한다.
+        <img src="src/4.personal access token/token/6.png">
+    </p>
+    <p>
+        터미널을 열어 "git clone" 명령어를 이용하여 프라이빗 저장소 클론을 해보자. 입력방법은 이렇다.<br>
+        "git clone http://<token>@github.com/<조직이름>/<저장소이름>"
+        <img src="src/4.personal access token/token/7.png">
+        정상적으로 명령실행이 이루어지면 코드를 실행한다.
+    </p>
+</body>
